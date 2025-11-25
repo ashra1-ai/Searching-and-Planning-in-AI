@@ -1,317 +1,241 @@
-# Forgot Password Feature - User Manual
+# Editing Text on the Website - User Manual
+
+**UbuntuSelect Content Management System**
+
+---
 
 ## Overview
 
-The Forgot Password feature allows users (artists, clients, and admins) to reset their password if they have forgotten it. The system sends a secure reset link to the user's registered email address, which they can use to create a new password.
+The **Edit Website Text** feature allows administrators to edit text content on public pages (Home, About, Contact, Services), email templates, and approval workflows.
 
-**User Stories:**
-- **US 3.02** - Artist reset password
-- **US 8.03** - Client reset password
-
----
-
-## Table of Contents
-
-1. [Requesting a Password Reset](#1-requesting-a-password-reset)
-2. [Receiving the Reset Email](#2-receiving-the-reset-email)
-3. [Resetting Your Password](#3-resetting-your-password)
-4. [Handling Invalid or Expired Tokens](#4-handling-invalid-or-expired-tokens)
-5. [Technical Details](#5-technical-details)
-6. [Troubleshooting](#6-troubleshooting)
+**User Stories:** US 12.01, US 12.02  
+**Developed By:** Ankriti, Kanishk
 
 ---
 
-## 1. Requesting a Password Reset
+## Quick Start
 
-### Step 1: Navigate to Login Page
-
-1. Open your web browser and navigate to the UbuntuSelect login page.
-2. You will see the login form with fields for Username and Password.
-
-**[IMAGE PLACEHOLDER 1: Login page showing the login form with "Forgot password?" link]**
-
-### Step 2: Click "Forgot password?"
-
-1. On the login page, locate the "Forgot password?" link next to the Password field.
-2. Click the "Forgot password?" button.
-
-**[IMAGE PLACEHOLDER 2: Close-up of the "Forgot password?" button/link on the login page]**
-
-### Step 3: Enter Your Email Address
-
-1. A modal dialog will appear with the title "Reset Password".
-2. Enter the email address associated with your UbuntuSelect account in the Email field.
-3. Click the "Send Link" button.
-
-**[IMAGE PLACEHOLDER 3: Reset Password modal showing the email input field and Send Link button]**
-
-### Step 4: Confirmation Message
-
-1. After clicking "Send Link", you will see a confirmation message:
-   - **Success**: "If the email exists, a reset link was sent."
-   - **Error**: "Unable to request reset right now."
-
-2. **Note**: For security reasons, the system will show the same success message whether the email exists or not. This prevents attackers from discovering which email addresses are registered.
-
-**[IMAGE PLACEHOLDER 4: Reset Password modal showing the success confirmation message]**
-
-### Step 5: Close the Modal (Optional)
-
-- Click the "Cancel" button or press the **Escape** key to close the modal and return to the login page.
+1. Log in as administrator
+2. Go to Admin Dashboard → Click **"Manage Content"**
+3. Select **"Pages"** tab → Choose a page (Home/About/Contact/Services)
+4. Click **"Edit"** on any content item
+5. Modify text → Click **"Save"**
+6. Verify changes on the public website
 
 ---
 
-## 2. Receiving the Reset Email
+## Step-by-Step Guide
 
-### Step 1: Check Your Email Inbox
+### 1. Accessing Manage Content
 
-1. Open your email application or webmail service.
-2. Look for an email from UbuntuSelect with the subject: **"UbuntuSelect — Password Reset Request"**
-3. The email may take a few minutes to arrive. Check your spam/junk folder if you don't see it.
+#### Step 1: Log in and Navigate to Dashboard
 
-**[IMAGE PLACEHOLDER 5: Email inbox showing the password reset email from UbuntuSelect]**
+1. Log in to UbuntuSelect with your administrator credentials
+2. You'll be redirected to the Admin Dashboard
+3. Locate the **"Manage Content"** card
+4. Click on it to open the Manage Content page
 
-### Step 2: Open the Reset Email
+**[IMAGE PLACEHOLDER 1: Admin Dashboard showing "Manage Content" card]**
+- *Screenshot: Admin Dashboard with multiple management cards. "Manage Content" card should be visible and clearly labeled.*
 
-1. Open the password reset email.
-2. The email will contain:
-   - A greeting with your username
-   - Instructions about the password reset request
-   - A reset link (URL) that looks like: `http://localhost:5173/password-reset/reset/{tokenId}`
+#### Step 2: Understand the Interface
 
-**[IMAGE PLACEHOLDER 6: Password reset email content showing the reset link]**
+The Manage Content page has three tabs:
+- **Pages** - Edit public page content (default)
+- **Approvals** - Manage approval workflows
+- **Email Templates** - Edit email templates
 
-### Step 3: Click the Reset Link
-
-1. Click on the reset link provided in the email.
-2. This will open your web browser and navigate to the password reset page.
-
-**Important Security Notes:**
-- The reset link is valid for **24 hours** from the time it was created.
-- Each reset link can only be used **once**.
-- If you request multiple password resets, only the most recent link will be valid (previous links are automatically revoked).
+**[IMAGE PLACEHOLDER 2: Manage Content page showing three tabs]**
+- *Screenshot: Top of Manage Content page showing hero section with title "Manage Content" and three tab buttons (Pages, Approvals, Email Templates) with "Pages" active.*
 
 ---
 
-## 3. Resetting Your Password
+### 2. Editing Page Content
 
-### Step 1: Token Validation
+#### Step 1: Select a Page
 
-1. After clicking the reset link, the system will automatically validate the token.
-2. You will see a "Validating token..." message while the system checks if the link is valid.
+1. Ensure **"Pages"** tab is selected
+2. Below, you'll see filter pills: **Home**, **About**, **Contact**, **Services**
+3. Click the page you want to edit (e.g., "Home")
+4. The selected pill will be highlighted
 
-**[IMAGE PLACEHOLDER 7: Password reset page showing "Validating token..." message]**
+**[IMAGE PLACEHOLDER 3: Page selection with filter pills]**
+- *Screenshot: "Select Page" section showing four filter pills (Home, About, Contact, Services) arranged horizontally. One pill (e.g., "Home") should be highlighted/active.*
 
-### Step 2: Enter New Password
+#### Step 2: View Content Items
 
-1. If the token is valid, you will see a form titled "Create a New Password".
-2. Enter your new password in the "New password" field.
-   - **Requirements**: Password must be at least 8 characters long.
-   - The field shows a placeholder: "Minimum 8 characters"
+After selecting a page, content items appear as cards showing:
+- **Label** - Content name (e.g., "Hero Title")
+- **Current Content** - Preview of existing text
+- **Edit Button** - To start editing
 
-**[IMAGE PLACEHOLDER 8: Password reset form showing the "New password" input field]**
+**[IMAGE PLACEHOLDER 4: Content cards in view mode]**
+- *Screenshot: Multiple content cards displayed vertically. Each card shows a label at top, preview box with text content, and "Edit" button at bottom. Show 2-3 cards to demonstrate the list structure.*
 
-### Step 3: Confirm New Password
+#### Step 3: Edit Content
 
-1. Re-enter your new password in the "Confirm password" field to verify it matches.
-   - The field shows a placeholder: "Re-enter password"
-2. The system will validate that both passwords match before allowing submission.
+1. Click **"Edit"** on the content card you want to modify
+2. The card expands to show:
+   - A **textarea** with current content
+   - **Cancel** button (to discard)
+   - **Save** button (to save changes)
+3. Modify the text in the textarea
+4. Click **"Save"** when done
 
-**[IMAGE PLACEHOLDER 9: Password reset form showing both password fields filled in]**
+**[IMAGE PLACEHOLDER 5: Content card in edit mode]**
+- *Screenshot: Single content card in edit mode showing label at top, large textarea field with text, and "Cancel" and "Save" buttons at bottom. The Save button should be yellow/highlighted.*
 
-### Step 4: Submit New Password
+#### Step 4: Verify Changes
 
-1. Click the "Set New Password" button.
-2. The button will show "Submitting..." while the request is being processed.
+After saving, the card returns to view mode showing your updated content.
 
-**[IMAGE PLACEHOLDER 10: Password reset form with "Set New Password" button highlighted]**
-
-### Step 5: Success and Redirect
-
-1. Upon successful password reset, you will see a success message:
-   - "Password successfully changed. Redirecting to login..."
-2. After approximately 1.4 seconds, you will be automatically redirected to the login page.
-3. You can now log in with your new password.
-
-**[IMAGE PLACEHOLDER 11: Success message on password reset page showing "Password successfully changed. Redirecting to login..."]**
-
----
-
-## 4. Handling Invalid or Expired Tokens
-
-### Scenario 1: Expired Token
-
-If your reset link has expired (older than 24 hours), you will see:
-
-1. An error message: "This reset link is invalid or expired."
-2. A form to request a new reset link.
-
-**[IMAGE PLACEHOLDER 12: Password reset page showing expired token error message]**
-
-### Scenario 2: Already Used Token
-
-If you try to use a reset link that has already been used, you will see:
-
-1. An error message indicating the token has already been used.
-2. A form to request a new reset link.
-
-**[IMAGE PLACEHOLDER 13: Password reset page showing "token already used" error message]**
-
-### Scenario 3: Invalid Token
-
-If the token in the URL is malformed or doesn't exist, you will see:
-
-1. An error message: "This reset link is invalid or expired."
-2. A form to request a new reset link.
-
-### Requesting a New Reset Link
-
-1. When you see an error message, you can request a new reset link directly from the same page.
-2. Enter your email address in the provided form.
-3. Click "Send Link" to receive a new reset email.
-4. You can also click "Cancel" to return to the login page.
-
-**[IMAGE PLACEHOLDER 14: Password reset page showing the form to request a new reset link after token error]**
+**[IMAGE PLACEHOLDER 6: Content card showing updated content]**
+- *Screenshot: Content card back in view mode displaying the updated text in the preview box. The text should be different from the original shown in image 4.*
 
 ---
 
-## 5. Technical Details
+### 3. Editing About Page Content
 
-### Password Requirements
+The About page has special section organization:
 
-- **Minimum Length**: 8 characters
-- **Validation**: Passwords must match in both "New password" and "Confirm password" fields
+1. **Our Mission** - Mission-related content
+2. **Our Core Values** - Displayed in a grid layout
+3. **Let's Work Together** - Call-to-action content
+4. **Other** - Additional content
 
-### Token Security
+**[IMAGE PLACEHOLDER 7: About page with organized sections]**
+- *Screenshot: About page content showing organized sections. "Our Mission" section with cards in list, "Our Core Values" section with cards in grid layout (2-3 columns), and "Let's Work Together" section. The grid layout for Core Values should be clearly visible.*
 
-- **Token Format**: UUID (Universally Unique Identifier)
-- **Expiration**: 24 hours from creation
-- **Single Use**: Each token can only be used once
-- **Automatic Revocation**: When a new reset is requested, all previous unused tokens for that user are automatically revoked
+Editing works the same way - click "Edit" on any card, modify text, and click "Save".
+
+---
+
+### 4. Editing Email Templates
+
+#### Step 1: Select Email Templates Tab
+
+1. Click the **"Email Templates"** tab
+2. A list of email templates will load
+
+**[IMAGE PLACEHOLDER 8: Email Templates tab]**
+- *Screenshot: Email Templates tab active, showing list of email template cards. Each card shows template name (e.g., "Password Reset Email") and preview of email content.*
+
+#### Step 2: Edit Template
+
+1. Click **"Edit"** on the template you want to modify
+2. Edit the text in the textarea
+3. Click **"Save"** to update
+
+> **⚠️ Important:** Some templates use variables like `{username}`, `{reset_link}` - don't remove these!
+
+**[IMAGE PLACEHOLDER 9: Email template in edit mode]**
+- *Screenshot: Email template card in edit mode showing textarea with email content. The content should show variables like `{username}` or `{reset_link}` highlighted or annotated to emphasize their importance.*
+
+---
+
+### 5. Managing Approvals
+
+1. Click the **"Approvals"** tab
+2. View approval-related content items
+3. Edit using the same process: Click "Edit" → Modify → "Save"
+
+**[IMAGE PLACEHOLDER 10: Approvals tab]**
+- *Screenshot: Approvals tab active showing approval-related content cards (e.g., "Approval Pending Message", "Approval Rejected Notification").*
+
+---
+
+### 6. Viewing Your Changes
+
+1. After saving, open the public website in a new tab
+2. Navigate to the page you edited:
+   - Home: `/`
+   - About: `/about`
+   - Contact: `/contact`
+   - Services: `/services`
+3. Verify your changes appear correctly
+4. If not visible, refresh the page (F5 or Ctrl+R)
+
+**[IMAGE PLACEHOLDER 11: Public page showing updated content]**
+- *Screenshot: Public-facing website page (e.g., About page) displaying the updated content that was edited in the admin interface. Should show UbuntuSelect public website styling.*
+
+---
+
+## Troubleshooting
+
+### Changes not saving?
+- Check internet connection
+- Verify you clicked "Save" (not "Cancel")
+- Check browser console for errors (F12)
+- Ensure you have admin/manager permissions
+
+### Content not appearing on public page?
+- Refresh the page (F5 or Ctrl+Shift+R for hard refresh)
+- Clear browser cache
+- Verify you edited the correct content item
+- Check that page selection matches (e.g., "home" content shows on homepage)
+
+### "Loading..." stuck?
+- Check internet connection
+- Verify backend API is running
+- Check browser console for errors
+- Try refreshing the page
+
+### Can't find content item?
+- Verify correct page is selected
+- Scroll down to see more items
+- Use browser search (Ctrl+F) to find specific text
+
+**[IMAGE PLACEHOLDER 12: Browser console with error messages]**
+- *Screenshot: Browser developer tools (F12) open showing Console tab with error messages. Helps users identify API or network issues.*
+
+---
+
+## Best Practices
+
+✅ **Preview before publishing** - Review changes in admin interface first  
+✅ **Test on public pages** - Always verify changes appear correctly  
+✅ **Backup important content** - Copy original text before major changes  
+✅ **Preserve email variables** - Don't remove `{username}`, `{reset_link}`, etc.  
+✅ **Maintain consistency** - Keep tone and style consistent across pages  
+✅ **Save frequently** - Don't leave edit mode open for long periods  
+
+---
+
+## Technical Details
+
+### Supported Pages
+- **Home** (`home`) - Homepage content
+- **About** (`about`) - About page with section grouping
+- **Contact** (`contact`) - Contact page content
+- **Services** (`services`) - Services page content
 
 ### API Endpoints
+- **Get Content:** `GET /api/site-texts/?page={pageName}`
+- **Update Content:** `PATCH /api/site-texts/{id}/` with `{ "content": "new text" }`
 
-The forgot password feature uses the following backend API endpoints:
+### Permissions
+- **Admin** and **Manager** roles can edit content
+- **Public viewing** requires no authentication
 
-1. **Request Password Reset**
-   - `POST /auth/password-reset/request/`
-   - Body: `{ "email": "user@example.com" }`
-
-2. **Validate Reset Token**
-   - `GET /auth/password-reset/validate/{tokenId}/`
-   - Returns: `{ "valid": true/false, "username": "...", "email": "..." }`
-
-3. **Complete Password Reset**
-   - `POST /auth/password-reset/reset/{tokenId}/`
-   - Body: `{ "password": "newpassword", "confirm_password": "newpassword" }`
-
-### Frontend Routes
-
-- **Login Page**: `/login`
-- **Password Reset Page**: `/password-reset/reset/{tokenId}`
-
-### Email Configuration
-
-The system uses Django's email backend to send password reset emails. The email includes:
-- Subject: "UbuntuSelect — Password Reset Request"
-- Recipient: The email address associated with the account
-- Content: A personalized message with the reset link
-
----
-
-## 6. Troubleshooting
-
-### Problem: I didn't receive the reset email
-
-**Solutions:**
-1. Check your spam/junk folder - the email may have been filtered.
-2. Wait a few minutes - email delivery can sometimes be delayed.
-3. Verify you're using the correct email address associated with your account.
-4. Check if your email provider is blocking emails from the UbuntuSelect domain.
-5. Try requesting a new reset link.
-
-**[IMAGE PLACEHOLDER 15: Troubleshooting section visual - email not received]**
-
-### Problem: The reset link says "Invalid or expired token"
-
-**Solutions:**
-1. The link may have expired (valid for 24 hours only).
-2. The link may have already been used (each link can only be used once).
-3. You may have requested a new reset link, which automatically invalidated the old one.
-4. **Solution**: Request a new reset link using the form on the error page.
-
-**[IMAGE PLACEHOLDER 16: Troubleshooting section visual - invalid token]**
-
-### Problem: "Passwords do not match" error
-
-**Solutions:**
-1. Ensure both password fields contain exactly the same text.
-2. Check for extra spaces before or after the password.
-3. Make sure your password is at least 8 characters long.
-
-**[IMAGE PLACEHOLDER 17: Troubleshooting section visual - password mismatch error]**
-
-### Problem: "Password must be at least 8 characters" error
-
-**Solutions:**
-1. Your new password must be at least 8 characters long.
-2. Count the characters in your password to ensure it meets the requirement.
-3. Consider using a combination of letters, numbers, and special characters for better security.
-
-**[IMAGE PLACEHOLDER 18: Troubleshooting section visual - password too short error]**
-
-### Problem: "Unable to request reset right now" error
-
-**Solutions:**
-1. Check your internet connection.
-2. The server may be temporarily unavailable - try again in a few minutes.
-3. Contact support if the problem persists.
-
-### Problem: I'm stuck on "Validating token..." screen
-
-**Solutions:**
-1. Check your internet connection.
-2. Refresh the page.
-3. The token may be invalid - try requesting a new reset link.
-4. Clear your browser cache and cookies, then try again.
-
----
-
-## Security Best Practices
-
-1. **Never share your reset link** - Reset links are personal and should not be shared with anyone.
-2. **Use the link promptly** - Reset links expire after 24 hours for security reasons.
-3. **Choose a strong password** - Use a combination of uppercase, lowercase, numbers, and special characters.
-4. **Don't reuse passwords** - Use a unique password for your UbuntuSelect account.
-5. **Check the URL** - Ensure you're on the official UbuntuSelect domain before entering your new password.
+### Content Formatting
+- Line breaks are preserved
+- Multiple spaces are maintained
+- Content is stored as plain text (no HTML)
 
 ---
 
 ## Summary
 
-The Forgot Password feature provides a secure way to reset your account password:
+The Edit Website Text feature provides a simple interface to manage website content:
 
-1. ✅ Click "Forgot password?" on the login page
-2. ✅ Enter your email address
-3. ✅ Check your email for the reset link
-4. ✅ Click the link (valid for 24 hours)
-5. ✅ Enter and confirm your new password
-6. ✅ Log in with your new password
-
-If you encounter any issues, you can always request a new reset link from the error page or contact support for assistance.
+1. ✅ Access Manage Content from Admin Dashboard
+2. ✅ Select page and content item to edit
+3. ✅ Modify text in textarea
+4. ✅ Save changes
+5. ✅ Verify on public website
 
 ---
 
-## Additional Notes
-
-- The feature works for all user types: Artists, Clients, and Admins
-- The system does not reveal whether an email address is registered (security feature)
-- All password resets are logged for security auditing
-- Multiple reset requests will invalidate previous unused tokens
-
----
-
-**Last Updated**: [Date]
-**Version**: 1.0
-**Documentation Maintained By**: UbuntuSelect Development Team
-
+**Last Updated:** [Date]  
+**Version:** 1.0  
+**Developed By:** Ankriti, Kanishk
