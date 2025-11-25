@@ -1,287 +1,236 @@
-# Artist Profile Editing - User Manual
+# Client Testimonials - User Manual
 
-**UbuntuSelect Artist Profile Management**
+**UbuntuSelect Client Testimonial Submission**
 
 ---
 
 ## Overview
 
-The **Artist Profile Editing** feature allows artists to edit and update their profile information, including biography, social media links, genres, location, and more.
+The **Client Testimonials** feature allows clients to submit reviews/testimonials for artists they've worked with. Testimonials are displayed on the artist's profile and the artist receives a notification when a new testimonial is submitted.
 
-**User Stories:** US 4.04, US 4.06, US 4.07, US 4.08  
-**Developed By:** Kanishk
+**User Story:** US 9.01  
+**Developed By:** Ankriti, Kanishk
 
 ---
 
 ## Quick Start
 
-1. Log in as an artist
-2. Navigate to your artist profile page
-3. Click **"Edit Profile"** button
-4. Make your changes
-5. Click **"Save"** to update or **"Cancel"** to discard
+1. Log in as a client
+2. Navigate to an artist's profile page
+3. Click the **"Reviews"** tab
+4. Click **"Write a Testimonial"** button
+5. Fill in your name/organization and testimonial text
+6. Click **"Submit Testimonial"**
+
+**[IMAGE PLACEHOLDER 0: Login page as client]**
+- *Screenshot: Login page showing the login form. The user should be logging in with client credentials. The form should show email/password fields and a "Login" button.*
 
 ---
 
 ## Step-by-Step Guide
 
-### 1. Accessing Your Profile
+### 1. Accessing the Reviews Tab
 
-#### Step 1: Log in and Navigate to Your Profile
+#### Step 1: Navigate to Artist Profile
 
-1. Log in to UbuntuSelect with your artist account credentials
-2. Navigate to your artist profile page (e.g., `/artists/{your-artist-id}`)
-3. You should see your profile with banner image, profile picture, and profile information
-4. Look for the **"Edit Profile"** button in the header area
+1. Log in to UbuntuSelect with your client account credentials
+2. Navigate to an artist's profile page (e.g., `/artists/{artist-id}`)
+3. You should see the artist's profile with tabs: About, Portfolio, Feed, Schedule, **Reviews**
 
-> **💡 Note:** The "Edit Profile" button only appears when you're viewing your own profile. If you're viewing another artist's profile, you'll see a "Follow" button instead.
+**[IMAGE PLACEHOLDER 1: Artist profile page with Reviews tab visible]**
+- *Screenshot: Artist profile page showing the tab navigation bar with "Reviews" tab clearly visible. The page should show the artist's banner, profile picture, and name. The user should be logged in as a client.*
 
-**[IMAGE PLACEHOLDER 1: Artist profile page with "Edit Profile" button visible]**
-- *Screenshot: Artist profile page showing the banner, profile picture, artist name, and the "Edit Profile" button clearly visible in the header actions area. The page should show "Viewing as: ARTIST" indicator (if in dev mode).*
+**[IMAGE PLACEHOLDER 1A: Full artist profile view from client perspective]**
+- *Screenshot: Complete artist profile page view showing the banner, profile picture, artist name, genres, location, and all tabs (About, Portfolio, Feed, Schedule, Reviews) in the navigation bar. This shows the full context before navigating to Reviews.*
 
----
+#### Step 2: Open Reviews Tab
 
-### 2. Entering Edit Mode
+1. Click on the **"Reviews"** tab
+2. The Reviews tab will open, showing existing testimonials (if any)
+3. You'll see a **"Write a Testimonial"** button if you're logged in as a client
 
-#### Step 1: Click "Edit Profile"
+**[IMAGE PLACEHOLDER 2: Reviews tab with Write a Testimonial button]**
+- *Screenshot: Reviews tab open showing the "Testimonials" heading, a "Write a Testimonial" button centered at the top, and any existing testimonials displayed below. The page should clearly indicate this is the Reviews/Testimonials section.*
 
-1. Click the **"Edit Profile"** button
-2. The page will enter edit mode
-3. You'll see an **"EDITING MODE"** badge appear
-4. Editable fields will change from display text to input fields
-
-**[IMAGE PLACEHOLDER 2: Profile in edit mode showing editable fields]**
-- *Screenshot: Artist profile page in edit mode. The "Edit Profile" button should be replaced with "Save" and "Cancel" buttons. An "EDITING MODE" badge should be visible. Input fields should be shown for Display Name, Stage Name, Genres, Medium, and Location in the header area.*
+**[IMAGE PLACEHOLDER 2A: Loading state in Reviews tab]**
+- *Screenshot: Reviews tab showing "Loading testimonials..." message. This appears briefly while testimonials are being fetched from the server.*
 
 ---
 
-### 3. Editing Profile Information
+### 2. Writing a Testimonial
 
-#### Step 1: Edit Header Information
+#### Step 1: Click "Write a Testimonial"
 
-In the profile header, you can edit:
+1. Click the **"Write a Testimonial"** button
+2. The form will expand below the button
+3. The button will change to **"Cancel"** (you can click it to close the form)
 
-1. **Display Name** (Required)
-   - This is your primary name shown on your profile
-   - Field is marked with an asterisk or validation
-   - Cannot be empty
+**[IMAGE PLACEHOLDER 3: Testimonial form opened]**
+- *Screenshot: Reviews tab showing the testimonial form expanded. The form should display "Share your experience" heading, an input field for "Your Name / Organization", a textarea for "Your Testimonial", and a "Submit Testimonial" button. The "Cancel" button should be visible above the form.*
 
-2. **Stage Name** (Optional)
-   - Your performance/stage name
-   - Displayed in quotes below your display name
-   - Can be left empty
+**[IMAGE PLACEHOLDER 3A: Cancel button closing the form]**
+- *Screenshot: Reviews tab showing the "Cancel" button being clicked or the form being closed. The form should collapse and the "Write a Testimonial" button should reappear. This demonstrates how to cancel without submitting.*
 
-3. **Genres** (Comma-separated)
-   - Enter genres separated by commas (e.g., "Jazz, Rock, Blues")
-   - Each genre will be displayed with bullet separators
+#### Step 2: Fill in Your Information
 
-4. **Medium/Instrument**
-   - Your primary medium or instrument (e.g., "Vocals", "Guitar", "Band")
+1. **Your Name / Organization** (Required)
+   - Enter your name or organization name
+   - Example: "John Doe" or "ABC Events"
+   - **Note:** The author name displayed on the testimonial will be taken from your logged-in account name, not from this field
 
-5. **Location**
-   - Your city/location (e.g., "Toronto, ON")
+2. **Your Testimonial** (Required)
+   - Enter your review/testimonial text
+   - Share your experience working with the artist
+   - Be honest and helpful for other clients
 
-**[IMAGE PLACEHOLDER 3: Header fields in edit mode]**
-- *Screenshot: Close-up of the profile header showing all editable input fields: Display Name (with focus/active state), Stage Name, Genres (comma-separated input), Medium, and Location. The fields should be clearly labeled and visible.*
+**[IMAGE PLACEHOLDER 4: Filled testimonial form]**
+- *Screenshot: Testimonial form with sample data filled in. The "Your Name / Organization" field should show "John Doe" or similar, and the "Your Testimonial" textarea should contain sample testimonial text like "This artist was amazing! Highly professional and great performance." Both fields should be clearly visible and filled.*
 
-#### Step 2: Edit About/Biography
+#### Step 3: Submit Your Testimonial
 
-1. Navigate to the **"About"** tab (should be active by default)
-2. Scroll to the "About {Your Name}" section
-3. In edit mode, you'll see a large textarea instead of the biography text
-4. Edit your biography/description
-5. Add details about your artistic journey, style, and what makes your performances special
+1. Review your testimonial to ensure it's accurate and complete
+2. Click the **"Submit Testimonial"** button
+3. The form will close and your testimonial will appear in the list
+4. The artist will receive a notification about your testimonial
 
-**[IMAGE PLACEHOLDER 4: Biography textarea in edit mode]**
-- *Screenshot: About tab showing the biography section in edit mode. A large textarea should be visible with placeholder text like "Tell your story... share your journey as an artist...". Help text should be visible below explaining the purpose.*
+**[IMAGE PLACEHOLDER 5: Testimonial submitted and displayed]**
+- *Screenshot: Reviews tab after submission showing the new testimonial card displayed at the top of the testimonials list. The testimonial card should show the author name, date, and the testimonial text in quotes. The form should be closed and the "Write a Testimonial" button should be visible again.*
 
-#### Step 3: Add Social Media Links
-
-1. Scroll to the **"Social Links"** section in the About tab
-2. In edit mode, you'll see a textarea for social media links
-3. Enter one link per line:
-   ```
-   instagram.com/yourpage
-   facebook.com/yourpage
-   twitter.com/yourpage
-   yourwebsite.com
-   ```
-4. Links can be entered with or without `https://` - the system will add it automatically
-
-**[IMAGE PLACEHOLDER 5: Social links textarea in edit mode]**
-- *Screenshot: Social Links section in edit mode showing a textarea with placeholder text demonstrating the format (one link per line). Help text should explain the format. Sample links should be visible in the placeholder.*
-
-#### Step 4: Add Spotify URL (Optional)
-
-1. Scroll to the **"Music on Spotify"** section
-2. In edit mode, you'll see an input field for Spotify Artist URL
-3. Paste your Spotify artist profile URL (e.g., `https://open.spotify.com/artist/...`)
-4. This enables music embedding on your profile
-
-**[IMAGE PLACEHOLDER 6: Spotify URL input field]**
-- *Screenshot: Music on Spotify section in edit mode showing an input field with placeholder "https://open.spotify.com/artist/...". Help text should explain how to get the URL.*
+**[IMAGE PLACEHOLDER 5A: Submit button in loading state]**
+- *Screenshot: Testimonial form showing the "Submit Testimonial" button in a disabled/loading state while the submission is being processed. This indicates the system is saving the testimonial.*
 
 ---
 
-### 4. Saving Your Changes
+### 3. Viewing Testimonials
 
-#### Step 1: Review Your Changes
+#### Step 1: See All Testimonials
 
-1. Review all the changes you've made
-2. Ensure the **Display Name** field is not empty (required field)
-3. Check that all information is correct
+1. All testimonials are displayed in the Reviews tab
+2. Each testimonial shows:
+   - **Author name** (or organization)
+   - **Date** the testimonial was submitted
+   - **Testimonial text** (in quotes)
 
-#### Step 2: Save or Cancel
+2. Testimonials are displayed in reverse chronological order (newest first)
 
-1. **To Save:**
-   - Click the **"Save"** button (typically green/accent colored)
-   - Your changes will be saved to the server
-   - The page will exit edit mode and show your updated profile
+**[IMAGE PLACEHOLDER 6: Multiple testimonials displayed]**
+- *Screenshot: Reviews tab showing multiple testimonial cards. Each card should display the author name, date, and testimonial text. The cards should be stacked vertically with clear separation. The newest testimonial should appear at the top.*
 
-2. **To Cancel:**
-   - Click the **"Cancel"** button (typically red/danger colored)
-   - All changes will be discarded
-   - The page will return to view mode with original content
+**[IMAGE PLACEHOLDER 6A: Single testimonial card close-up]**
+- *Screenshot: Close-up view of a single testimonial card showing the structure: author name at the top, date on the right side, and the testimonial text in quotes below. This shows the detailed layout of each testimonial.*
 
-**[IMAGE PLACEHOLDER 7: Save and Cancel buttons]**
-- *Screenshot: Profile header showing "Save" and "Cancel" buttons side by side. The Save button should be highlighted/accent colored, and Cancel should be danger/red colored. The buttons should be clearly visible and clickable.*
+#### Step 2: Empty State
 
-#### Step 3: Validation Errors
+If no testimonials exist yet:
+- You'll see: **"No testimonials yet. Be the first to write one!"**
+- This encourages clients to be the first to leave a review
 
-If you try to save without a Display Name:
-- An error message will appear: "Display Name is required."
-- The Display Name field will be highlighted
-- The cursor will automatically focus on the Display Name field
-- You must enter a Display Name before saving
-
-**[IMAGE PLACEHOLDER 8: Validation error for Display Name]**
-- *Screenshot: Profile in edit mode showing a validation error message "Display Name is required." below the Display Name input field. The field should be highlighted in red or have an error border. The error message should be clearly visible.*
+**[IMAGE PLACEHOLDER 7: Empty testimonials section]**
+- *Screenshot: Reviews tab with no testimonials showing the empty state message "No testimonials yet. Be the first to write one!" centered on the page. The "Write a Testimonial" button should still be visible.*
 
 ---
 
-### 5. Viewing Your Updated Profile
+## Important Notes
 
-#### Step 1: Verify Changes
+### Who Can Submit Testimonials?
 
-1. After saving, the page automatically exits edit mode
-2. Your updated information will be displayed
-3. Check that:
-   - Display name is updated
-   - Biography shows your new text
-   - Social links are displayed as clickable links
-   - Genres, medium, and location are correct
+- ✅ **Clients** - Can submit testimonials when viewing any artist's profile
+- ❌ **Artists** - Cannot submit testimonials (they can only view and delete their own testimonials)
+- ❌ **Visitors** - Must log in as a client to submit testimonials
 
-**[IMAGE PLACEHOLDER 9: Updated profile in view mode]**
-- *Screenshot: Artist profile page back in view mode showing all the updated information. The Display Name should show the new value, biography should display the updated text, and social links should be visible as clickable links. The profile should look complete and professional.*
+### Testimonial Display
 
-#### Step 2: Check Public View
+- Testimonials are **public** - visible to all visitors, clients, and the artist
+- Testimonials appear on the artist's profile in the **Reviews** tab
+- The author name displayed is automatically taken from your logged-in account name (from your user profile)
 
-1. Open your profile in an incognito/private window or log out
-2. Navigate to your artist profile as a visitor
-3. Verify that all changes are visible to the public
-4. Test that social media links work correctly
+### Artist Actions
 
-**[IMAGE PLACEHOLDER 10: Public view of updated profile]**
-- *Screenshot: Artist profile viewed as a visitor (not logged in or different account). The profile should show all updated information. Social links should be visible and the biography should display the updated text. This demonstrates how clients/visitors see the profile.*
+- Artists can **delete** testimonials on their own profile
+- Artists receive a **notification** when a new testimonial is submitted
 
----
+**[IMAGE PLACEHOLDER 9: Artist view of testimonials with delete button]**
+- *Screenshot: Reviews tab viewed by the artist (logged in as artist). Each testimonial card should show a "Delete" button at the bottom. This demonstrates that artists can manage testimonials on their profile.*
 
-## Editing Different Sections
-
-### About Tab
-- **Biography** - Edit your story and artistic journey
-- **Social Links** - Add Instagram, Facebook, Twitter, website links
-- **Spotify URL** - Link your Spotify artist profile
-
-### Other Tabs (Not Editable in This Feature)
-- **Portfolio** - Media uploads (separate feature)
-- **Feed** - Posts and updates (separate feature)
-- **Schedule** - Calendar and events (separate feature)
-- **Reviews** - Client testimonials (read-only for artists)
+**[IMAGE PLACEHOLDER 10: Artist notification for new testimonial]**
+- *Screenshot: Artist's notification panel or notification list showing a new notification with type "Testimonial", title "New Testimonial", and description "{Client Name} left you a testimonial". This shows how artists are notified when clients submit testimonials.*
 
 ---
 
 ## Troubleshooting
 
-### "Edit Profile" button not visible?
-- **Solution:** Ensure you're logged in as an artist and viewing your own profile (not another artist's profile)
-- Check that your user role is "artist"
-- Verify you're on the correct profile URL
+### "Write a Testimonial" button not visible?
+- **Solution:** Ensure you're logged in as a client (not as an artist or visitor)
+- Check that you're viewing the Reviews tab (not another tab)
+- Refresh the page if the button doesn't appear
 
-### Changes not saving?
-- **Check Display Name:** Ensure the Display Name field is not empty (required field)
+### Testimonial not submitting?
+- **Check Required Fields:** Ensure both "Your Name / Organization" and "Your Testimonial" fields are filled
 - **Check Internet:** Verify you have a stable internet connection
-- **Try Again:** Click "Save" again - the button may show a loading state
+- **Try Again:** Click "Submit Testimonial" again - the button may show a loading state
 - **Check Console:** Open browser developer tools (F12) to check for errors
 
-### Social links not displaying?
-- **Format:** Ensure each link is on a separate line in the textarea
-- **Valid URLs:** Make sure links are in a valid format
-- **Save First:** Remember to click "Save" after adding links
+**[IMAGE PLACEHOLDER 11: Error message in form]**
+- *Screenshot: Testimonial form showing an error message, such as "Failed to submit testimonial" or validation errors. This helps users understand what went wrong when submission fails.*
 
-### Biography text not updating?
-- **Verify Tab:** Make sure you're editing in the "About" tab
-- **Check Save:** Ensure you clicked "Save" (not just closed edit mode)
-- **Refresh:** Try refreshing the page to see updates
+### Testimonial not appearing after submission?
+- **Wait a moment:** The page may need a moment to refresh
+- **Refresh Page:** Try refreshing the page to see your testimonial
+- **Check Tab:** Ensure you're still on the Reviews tab
 
-**[IMAGE PLACEHOLDER 11: Browser console showing errors]**
-- *Screenshot: Browser developer tools (F12) open showing the Console tab with error messages. This helps users identify API or network issues when saves fail.*
+### Can't see the Reviews tab?
+- **Verify URL:** Make sure you're on an artist's profile page (not your own profile)
+- **Check Navigation:** The Reviews tab should be in the tab navigation bar below the artist's header
 
----
+**[IMAGE PLACEHOLDER 8: Browser console showing errors]**
+- *Screenshot: Browser developer tools (F12) open showing the Console tab with error messages. This helps users identify API or network issues when testimonial submission fails.*
 
-## Best Practices
+**[IMAGE PLACEHOLDER 12: Visitor view of testimonials (no submit button)]**
+- *Screenshot: Reviews tab viewed by a visitor (not logged in). Testimonials should be visible, but the "Write a Testimonial" button should NOT be present. This shows that only logged-in clients can submit testimonials.*
 
-✅ **Keep Display Name Professional** - This is the primary name clients see  
-✅ **Write a Compelling Biography** - Share your story and what makes you unique  
-✅ **Add All Social Links** - Help clients find you on different platforms  
-✅ **Use Accurate Genres** - Helps clients find you in searches  
-✅ **Update Location** - Important for local bookings  
-✅ **Save Frequently** - Don't lose your work if the page refreshes  
-✅ **Preview Before Publishing** - Check how your profile looks to visitors  
 
 ---
 
 ## Technical Details
 
-### Editable Fields
+### Form Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| **Display Name** | Text | ✅ Yes | Primary name shown on profile |
-| **Stage Name** | Text | ❌ No | Performance/stage name |
-| **Genres** | Array | ❌ No | Comma-separated list of genres |
-| **Medium** | Text | ❌ No | Primary medium or instrument |
-| **Location** | Text | ❌ No | City/location |
-| **About/Biography** | Text | ❌ No | Artist story and description |
-| **Social Links** | Array | ❌ No | One link per line |
-| **Spotify URL** | URL | ❌ No | Spotify artist profile URL |
+| **Your Name / Organization** | Text | ✅ Yes | Form field (author name comes from logged-in account) |
+| **Your Testimonial** | Text | ✅ Yes | Review/testimonial content |
 
-### API Endpoint
-
-- **Update Profile:** `PATCH /api/artist/artist/{id}/`
-- **Allowed Fields:** `stage_name`, `about`, `genres`, `medium`, `location`, `social_links`, `spotify_url`
 
 ### Permissions
 
-- Only the artist who owns the profile can edit it
-- Artists cannot edit other artists' profiles
-- Changes are immediately visible to all visitors
+- **Clients** - Can create testimonials for any artist
+- **Artists** - Can view and delete testimonials on their own profile
+- **Visitors** - Can view testimonials but cannot submit
+
+### Notifications
+
+- When a client submits a testimonial, the artist receives a notification
+- Notification type: "Testimonial"
+- Notification title: "New Testimonial"
+- Notification description: "{Client Name} left you a testimonial"
 
 ---
 
 ## Summary
 
-The Artist Profile Editing feature provides a simple interface to manage your profile:
+The Client Testimonials feature allows clients to:
 
-1. ✅ Click "Edit Profile" on your artist profile
-2. ✅ Edit Display Name, Biography, Social Links, and more
-3. ✅ Ensure Display Name is filled (required)
-4. ✅ Click "Save" to update or "Cancel" to discard
-5. ✅ Verify changes are visible on your public profile
+1. ✅ Navigate to an artist's profile and open the Reviews tab
+2. ✅ Click "Write a Testimonial" to open the form
+3. ✅ Fill in name/organization and testimonial text
+4. ✅ Click "Submit Testimonial" to publish
+5. ✅ View all testimonials displayed on the artist's profile
+
+The artist receives a notification when a new testimonial is submitted.
 
 ---
 
 **Last Updated:** [Date]  
 **Version:** 1.0  
-**Developed By:** Kanishk
+**Developed By:** Ankriti, Kanishk
 
