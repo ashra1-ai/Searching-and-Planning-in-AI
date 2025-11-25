@@ -1,241 +1,287 @@
-# Editing Text on the Website - User Manual
+# Artist Profile Editing - User Manual
 
-**UbuntuSelect Content Management System**
+**UbuntuSelect Artist Profile Management**
 
 ---
 
 ## Overview
 
-The **Edit Website Text** feature allows administrators to edit text content on public pages (Home, About, Contact, Services), email templates, and approval workflows.
+The **Artist Profile Editing** feature allows artists to edit and update their profile information, including biography, social media links, genres, location, and more.
 
-**User Stories:** US 12.01, US 12.02  
-**Developed By:** Ankriti, Kanishk
+**User Stories:** US 4.04, US 4.06, US 4.07, US 4.08  
+**Developed By:** Kanishk
 
 ---
 
 ## Quick Start
 
-1. Log in as administrator
-2. Go to Admin Dashboard → Click **"Manage Content"**
-3. Select **"Pages"** tab → Choose a page (Home/About/Contact/Services)
-4. Click **"Edit"** on any content item
-5. Modify text → Click **"Save"**
-6. Verify changes on the public website
+1. Log in as an artist
+2. Navigate to your artist profile page
+3. Click **"Edit Profile"** button
+4. Make your changes
+5. Click **"Save"** to update or **"Cancel"** to discard
 
 ---
 
 ## Step-by-Step Guide
 
-### 1. Accessing Manage Content
+### 1. Accessing Your Profile
 
-#### Step 1: Log in and Navigate to Dashboard
+#### Step 1: Log in and Navigate to Your Profile
 
-1. Log in to UbuntuSelect with your administrator credentials
-2. You'll be redirected to the Admin Dashboard
-3. Locate the **"Manage Content"** card
-4. Click on it to open the Manage Content page
+1. Log in to UbuntuSelect with your artist account credentials
+2. Navigate to your artist profile page (e.g., `/artists/{your-artist-id}`)
+3. You should see your profile with banner image, profile picture, and profile information
+4. Look for the **"Edit Profile"** button in the header area
 
-**[IMAGE PLACEHOLDER 1: Admin Dashboard showing "Manage Content" card]**
-- *Screenshot: Admin Dashboard with multiple management cards. "Manage Content" card should be visible and clearly labeled.*
+> **💡 Note:** The "Edit Profile" button only appears when you're viewing your own profile. If you're viewing another artist's profile, you'll see a "Follow" button instead.
 
-#### Step 2: Understand the Interface
-
-The Manage Content page has three tabs:
-- **Pages** - Edit public page content (default)
-- **Approvals** - Manage approval workflows
-- **Email Templates** - Edit email templates
-
-**[IMAGE PLACEHOLDER 2: Manage Content page showing three tabs]**
-- *Screenshot: Top of Manage Content page showing hero section with title "Manage Content" and three tab buttons (Pages, Approvals, Email Templates) with "Pages" active.*
+**[IMAGE PLACEHOLDER 1: Artist profile page with "Edit Profile" button visible]**
+- *Screenshot: Artist profile page showing the banner, profile picture, artist name, and the "Edit Profile" button clearly visible in the header actions area. The page should show "Viewing as: ARTIST" indicator (if in dev mode).*
 
 ---
 
-### 2. Editing Page Content
+### 2. Entering Edit Mode
 
-#### Step 1: Select a Page
+#### Step 1: Click "Edit Profile"
 
-1. Ensure **"Pages"** tab is selected
-2. Below, you'll see filter pills: **Home**, **About**, **Contact**, **Services**
-3. Click the page you want to edit (e.g., "Home")
-4. The selected pill will be highlighted
+1. Click the **"Edit Profile"** button
+2. The page will enter edit mode
+3. You'll see an **"EDITING MODE"** badge appear
+4. Editable fields will change from display text to input fields
 
-**[IMAGE PLACEHOLDER 3: Page selection with filter pills]**
-- *Screenshot: "Select Page" section showing four filter pills (Home, About, Contact, Services) arranged horizontally. One pill (e.g., "Home") should be highlighted/active.*
-
-#### Step 2: View Content Items
-
-After selecting a page, content items appear as cards showing:
-- **Label** - Content name (e.g., "Hero Title")
-- **Current Content** - Preview of existing text
-- **Edit Button** - To start editing
-
-**[IMAGE PLACEHOLDER 4: Content cards in view mode]**
-- *Screenshot: Multiple content cards displayed vertically. Each card shows a label at top, preview box with text content, and "Edit" button at bottom. Show 2-3 cards to demonstrate the list structure.*
-
-#### Step 3: Edit Content
-
-1. Click **"Edit"** on the content card you want to modify
-2. The card expands to show:
-   - A **textarea** with current content
-   - **Cancel** button (to discard)
-   - **Save** button (to save changes)
-3. Modify the text in the textarea
-4. Click **"Save"** when done
-
-**[IMAGE PLACEHOLDER 5: Content card in edit mode]**
-- *Screenshot: Single content card in edit mode showing label at top, large textarea field with text, and "Cancel" and "Save" buttons at bottom. The Save button should be yellow/highlighted.*
-
-#### Step 4: Verify Changes
-
-After saving, the card returns to view mode showing your updated content.
-
-**[IMAGE PLACEHOLDER 6: Content card showing updated content]**
-- *Screenshot: Content card back in view mode displaying the updated text in the preview box. The text should be different from the original shown in image 4.*
+**[IMAGE PLACEHOLDER 2: Profile in edit mode showing editable fields]**
+- *Screenshot: Artist profile page in edit mode. The "Edit Profile" button should be replaced with "Save" and "Cancel" buttons. An "EDITING MODE" badge should be visible. Input fields should be shown for Display Name, Stage Name, Genres, Medium, and Location in the header area.*
 
 ---
 
-### 3. Editing About Page Content
+### 3. Editing Profile Information
 
-The About page has special section organization:
+#### Step 1: Edit Header Information
 
-1. **Our Mission** - Mission-related content
-2. **Our Core Values** - Displayed in a grid layout
-3. **Let's Work Together** - Call-to-action content
-4. **Other** - Additional content
+In the profile header, you can edit:
 
-**[IMAGE PLACEHOLDER 7: About page with organized sections]**
-- *Screenshot: About page content showing organized sections. "Our Mission" section with cards in list, "Our Core Values" section with cards in grid layout (2-3 columns), and "Let's Work Together" section. The grid layout for Core Values should be clearly visible.*
+1. **Display Name** (Required)
+   - This is your primary name shown on your profile
+   - Field is marked with an asterisk or validation
+   - Cannot be empty
 
-Editing works the same way - click "Edit" on any card, modify text, and click "Save".
+2. **Stage Name** (Optional)
+   - Your performance/stage name
+   - Displayed in quotes below your display name
+   - Can be left empty
+
+3. **Genres** (Comma-separated)
+   - Enter genres separated by commas (e.g., "Jazz, Rock, Blues")
+   - Each genre will be displayed with bullet separators
+
+4. **Medium/Instrument**
+   - Your primary medium or instrument (e.g., "Vocals", "Guitar", "Band")
+
+5. **Location**
+   - Your city/location (e.g., "Toronto, ON")
+
+**[IMAGE PLACEHOLDER 3: Header fields in edit mode]**
+- *Screenshot: Close-up of the profile header showing all editable input fields: Display Name (with focus/active state), Stage Name, Genres (comma-separated input), Medium, and Location. The fields should be clearly labeled and visible.*
+
+#### Step 2: Edit About/Biography
+
+1. Navigate to the **"About"** tab (should be active by default)
+2. Scroll to the "About {Your Name}" section
+3. In edit mode, you'll see a large textarea instead of the biography text
+4. Edit your biography/description
+5. Add details about your artistic journey, style, and what makes your performances special
+
+**[IMAGE PLACEHOLDER 4: Biography textarea in edit mode]**
+- *Screenshot: About tab showing the biography section in edit mode. A large textarea should be visible with placeholder text like "Tell your story... share your journey as an artist...". Help text should be visible below explaining the purpose.*
+
+#### Step 3: Add Social Media Links
+
+1. Scroll to the **"Social Links"** section in the About tab
+2. In edit mode, you'll see a textarea for social media links
+3. Enter one link per line:
+   ```
+   instagram.com/yourpage
+   facebook.com/yourpage
+   twitter.com/yourpage
+   yourwebsite.com
+   ```
+4. Links can be entered with or without `https://` - the system will add it automatically
+
+**[IMAGE PLACEHOLDER 5: Social links textarea in edit mode]**
+- *Screenshot: Social Links section in edit mode showing a textarea with placeholder text demonstrating the format (one link per line). Help text should explain the format. Sample links should be visible in the placeholder.*
+
+#### Step 4: Add Spotify URL (Optional)
+
+1. Scroll to the **"Music on Spotify"** section
+2. In edit mode, you'll see an input field for Spotify Artist URL
+3. Paste your Spotify artist profile URL (e.g., `https://open.spotify.com/artist/...`)
+4. This enables music embedding on your profile
+
+**[IMAGE PLACEHOLDER 6: Spotify URL input field]**
+- *Screenshot: Music on Spotify section in edit mode showing an input field with placeholder "https://open.spotify.com/artist/...". Help text should explain how to get the URL.*
 
 ---
 
-### 4. Editing Email Templates
+### 4. Saving Your Changes
 
-#### Step 1: Select Email Templates Tab
+#### Step 1: Review Your Changes
 
-1. Click the **"Email Templates"** tab
-2. A list of email templates will load
+1. Review all the changes you've made
+2. Ensure the **Display Name** field is not empty (required field)
+3. Check that all information is correct
 
-**[IMAGE PLACEHOLDER 8: Email Templates tab]**
-- *Screenshot: Email Templates tab active, showing list of email template cards. Each card shows template name (e.g., "Password Reset Email") and preview of email content.*
+#### Step 2: Save or Cancel
 
-#### Step 2: Edit Template
+1. **To Save:**
+   - Click the **"Save"** button (typically green/accent colored)
+   - Your changes will be saved to the server
+   - The page will exit edit mode and show your updated profile
 
-1. Click **"Edit"** on the template you want to modify
-2. Edit the text in the textarea
-3. Click **"Save"** to update
+2. **To Cancel:**
+   - Click the **"Cancel"** button (typically red/danger colored)
+   - All changes will be discarded
+   - The page will return to view mode with original content
 
-> **⚠️ Important:** Some templates use variables like `{username}`, `{reset_link}` - don't remove these!
+**[IMAGE PLACEHOLDER 7: Save and Cancel buttons]**
+- *Screenshot: Profile header showing "Save" and "Cancel" buttons side by side. The Save button should be highlighted/accent colored, and Cancel should be danger/red colored. The buttons should be clearly visible and clickable.*
 
-**[IMAGE PLACEHOLDER 9: Email template in edit mode]**
-- *Screenshot: Email template card in edit mode showing textarea with email content. The content should show variables like `{username}` or `{reset_link}` highlighted or annotated to emphasize their importance.*
+#### Step 3: Validation Errors
+
+If you try to save without a Display Name:
+- An error message will appear: "Display Name is required."
+- The Display Name field will be highlighted
+- The cursor will automatically focus on the Display Name field
+- You must enter a Display Name before saving
+
+**[IMAGE PLACEHOLDER 8: Validation error for Display Name]**
+- *Screenshot: Profile in edit mode showing a validation error message "Display Name is required." below the Display Name input field. The field should be highlighted in red or have an error border. The error message should be clearly visible.*
 
 ---
 
-### 5. Managing Approvals
+### 5. Viewing Your Updated Profile
 
-1. Click the **"Approvals"** tab
-2. View approval-related content items
-3. Edit using the same process: Click "Edit" → Modify → "Save"
+#### Step 1: Verify Changes
 
-**[IMAGE PLACEHOLDER 10: Approvals tab]**
-- *Screenshot: Approvals tab active showing approval-related content cards (e.g., "Approval Pending Message", "Approval Rejected Notification").*
+1. After saving, the page automatically exits edit mode
+2. Your updated information will be displayed
+3. Check that:
+   - Display name is updated
+   - Biography shows your new text
+   - Social links are displayed as clickable links
+   - Genres, medium, and location are correct
+
+**[IMAGE PLACEHOLDER 9: Updated profile in view mode]**
+- *Screenshot: Artist profile page back in view mode showing all the updated information. The Display Name should show the new value, biography should display the updated text, and social links should be visible as clickable links. The profile should look complete and professional.*
+
+#### Step 2: Check Public View
+
+1. Open your profile in an incognito/private window or log out
+2. Navigate to your artist profile as a visitor
+3. Verify that all changes are visible to the public
+4. Test that social media links work correctly
+
+**[IMAGE PLACEHOLDER 10: Public view of updated profile]**
+- *Screenshot: Artist profile viewed as a visitor (not logged in or different account). The profile should show all updated information. Social links should be visible and the biography should display the updated text. This demonstrates how clients/visitors see the profile.*
 
 ---
 
-### 6. Viewing Your Changes
+## Editing Different Sections
 
-1. After saving, open the public website in a new tab
-2. Navigate to the page you edited:
-   - Home: `/`
-   - About: `/about`
-   - Contact: `/contact`
-   - Services: `/services`
-3. Verify your changes appear correctly
-4. If not visible, refresh the page (F5 or Ctrl+R)
+### About Tab
+- **Biography** - Edit your story and artistic journey
+- **Social Links** - Add Instagram, Facebook, Twitter, website links
+- **Spotify URL** - Link your Spotify artist profile
 
-**[IMAGE PLACEHOLDER 11: Public page showing updated content]**
-- *Screenshot: Public-facing website page (e.g., About page) displaying the updated content that was edited in the admin interface. Should show UbuntuSelect public website styling.*
+### Other Tabs (Not Editable in This Feature)
+- **Portfolio** - Media uploads (separate feature)
+- **Feed** - Posts and updates (separate feature)
+- **Schedule** - Calendar and events (separate feature)
+- **Reviews** - Client testimonials (read-only for artists)
 
 ---
 
 ## Troubleshooting
 
+### "Edit Profile" button not visible?
+- **Solution:** Ensure you're logged in as an artist and viewing your own profile (not another artist's profile)
+- Check that your user role is "artist"
+- Verify you're on the correct profile URL
+
 ### Changes not saving?
-- Check internet connection
-- Verify you clicked "Save" (not "Cancel")
-- Check browser console for errors (F12)
-- Ensure you have admin/manager permissions
+- **Check Display Name:** Ensure the Display Name field is not empty (required field)
+- **Check Internet:** Verify you have a stable internet connection
+- **Try Again:** Click "Save" again - the button may show a loading state
+- **Check Console:** Open browser developer tools (F12) to check for errors
 
-### Content not appearing on public page?
-- Refresh the page (F5 or Ctrl+Shift+R for hard refresh)
-- Clear browser cache
-- Verify you edited the correct content item
-- Check that page selection matches (e.g., "home" content shows on homepage)
+### Social links not displaying?
+- **Format:** Ensure each link is on a separate line in the textarea
+- **Valid URLs:** Make sure links are in a valid format
+- **Save First:** Remember to click "Save" after adding links
 
-### "Loading..." stuck?
-- Check internet connection
-- Verify backend API is running
-- Check browser console for errors
-- Try refreshing the page
+### Biography text not updating?
+- **Verify Tab:** Make sure you're editing in the "About" tab
+- **Check Save:** Ensure you clicked "Save" (not just closed edit mode)
+- **Refresh:** Try refreshing the page to see updates
 
-### Can't find content item?
-- Verify correct page is selected
-- Scroll down to see more items
-- Use browser search (Ctrl+F) to find specific text
-
-**[IMAGE PLACEHOLDER 12: Browser console with error messages]**
-- *Screenshot: Browser developer tools (F12) open showing Console tab with error messages. Helps users identify API or network issues.*
+**[IMAGE PLACEHOLDER 11: Browser console showing errors]**
+- *Screenshot: Browser developer tools (F12) open showing the Console tab with error messages. This helps users identify API or network issues when saves fail.*
 
 ---
 
 ## Best Practices
 
-✅ **Preview before publishing** - Review changes in admin interface first  
-✅ **Test on public pages** - Always verify changes appear correctly  
-✅ **Backup important content** - Copy original text before major changes  
-✅ **Preserve email variables** - Don't remove `{username}`, `{reset_link}`, etc.  
-✅ **Maintain consistency** - Keep tone and style consistent across pages  
-✅ **Save frequently** - Don't leave edit mode open for long periods  
+✅ **Keep Display Name Professional** - This is the primary name clients see  
+✅ **Write a Compelling Biography** - Share your story and what makes you unique  
+✅ **Add All Social Links** - Help clients find you on different platforms  
+✅ **Use Accurate Genres** - Helps clients find you in searches  
+✅ **Update Location** - Important for local bookings  
+✅ **Save Frequently** - Don't lose your work if the page refreshes  
+✅ **Preview Before Publishing** - Check how your profile looks to visitors  
 
 ---
 
 ## Technical Details
 
-### Supported Pages
-- **Home** (`home`) - Homepage content
-- **About** (`about`) - About page with section grouping
-- **Contact** (`contact`) - Contact page content
-- **Services** (`services`) - Services page content
+### Editable Fields
 
-### API Endpoints
-- **Get Content:** `GET /api/site-texts/?page={pageName}`
-- **Update Content:** `PATCH /api/site-texts/{id}/` with `{ "content": "new text" }`
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| **Display Name** | Text | ✅ Yes | Primary name shown on profile |
+| **Stage Name** | Text | ❌ No | Performance/stage name |
+| **Genres** | Array | ❌ No | Comma-separated list of genres |
+| **Medium** | Text | ❌ No | Primary medium or instrument |
+| **Location** | Text | ❌ No | City/location |
+| **About/Biography** | Text | ❌ No | Artist story and description |
+| **Social Links** | Array | ❌ No | One link per line |
+| **Spotify URL** | URL | ❌ No | Spotify artist profile URL |
+
+### API Endpoint
+
+- **Update Profile:** `PATCH /api/artist/artist/{id}/`
+- **Allowed Fields:** `stage_name`, `about`, `genres`, `medium`, `location`, `social_links`, `spotify_url`
 
 ### Permissions
-- **Admin** and **Manager** roles can edit content
-- **Public viewing** requires no authentication
 
-### Content Formatting
-- Line breaks are preserved
-- Multiple spaces are maintained
-- Content is stored as plain text (no HTML)
+- Only the artist who owns the profile can edit it
+- Artists cannot edit other artists' profiles
+- Changes are immediately visible to all visitors
 
 ---
 
 ## Summary
 
-The Edit Website Text feature provides a simple interface to manage website content:
+The Artist Profile Editing feature provides a simple interface to manage your profile:
 
-1. ✅ Access Manage Content from Admin Dashboard
-2. ✅ Select page and content item to edit
-3. ✅ Modify text in textarea
-4. ✅ Save changes
-5. ✅ Verify on public website
+1. ✅ Click "Edit Profile" on your artist profile
+2. ✅ Edit Display Name, Biography, Social Links, and more
+3. ✅ Ensure Display Name is filled (required)
+4. ✅ Click "Save" to update or "Cancel" to discard
+5. ✅ Verify changes are visible on your public profile
 
 ---
 
 **Last Updated:** [Date]  
 **Version:** 1.0  
-**Developed By:** Ankriti, Kanishk
+**Developed By:** Kanishk
+
