@@ -214,19 +214,6 @@ If no testimonials exist yet:
 - Notification title: "New Testimonial"
 - Notification description: "{Client Name} left you a testimonial"
 
----
-
-## Summary
-
-The Client Testimonials feature allows clients to:
-
-1. ✅ Navigate to an artist's profile and open the Reviews tab
-2. ✅ Click "Write a Testimonial" to open the form
-3. ✅ Fill in name/organization and testimonial text
-4. ✅ Click "Submit Testimonial" to publish
-5. ✅ View all testimonials displayed on the artist's profile
-
-The artist receives a notification when a new testimonial is submitted.
 
 ---
 
